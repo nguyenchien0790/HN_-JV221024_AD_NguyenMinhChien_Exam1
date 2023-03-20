@@ -45,26 +45,28 @@ public class BookManagement {
     }
 
     private static void searchBookByAuthor() {
-        System.out.println("Nhập vào tên tác giả: ");
-        boolean flag = false;
+        System.out.print("Nhập vào tên tác giả: ");
+        boolean check = false;
         String name = sc.nextLine();
 
 
-//        for (int i = 0; i < bookList.size(); i++) {
-//            if (bookList.get(i).getAuthor().getAuthorName().equalsIgnoreCase(name)){
-//                bookList.get(i).displayData();
-//                flag = true;
-//            }
-//        }
-//        if (!flag)
-//            System.out.println("Không có tác giả này.");
-//        break;
+        for (int i = 0; i < bookList.size(); i++) {
+            if (bookList.get(i).getAuthor().getAuthorName().equalsIgnoreCase(name)) {
+                bookList.get(i).displayData();
+                check = true;
+            }
+            }
+        if (!check) {
+            System.out.println("Không tìm thấy tác giả");
+
+        }
     }
+
 
     private static void sortPriceBookASC() {
         Collections.sort(bookList);
         System.out.println(" THÔNG TIN SÁCH ");
-        System.out.printf("%-10s%-30s%-30s%-15s%-10s%-10s\n","Mã Sách","Tên Sách","Tên TG","Giá Bán","Số Lượng","Trạng Thái");
+        System.out.printf("%-10s%-30s%-30s%-15s%-10s%-10s\n", "Mã Sách", "Tên Sách", "Tên TG", "Giá Bán", "Số Lượng", "Trạng Thái");
         for (Book book : bookList) {
             book.displayData();
         }
@@ -83,7 +85,7 @@ public class BookManagement {
             bookList.add(book);
         }
         System.out.println(" THÔNG TIN SÁCH ");
-        System.out.printf("%-10s%-30s%-30s%-15s%-10s%-10s\n","Mã Sách","Tên Sách","Tên TG","Giá Bán","Số Lượng","Trạng Thái");
+        System.out.printf("%-10s%-30s%-30s%-15s%-10s%-10s\n", "Mã Sách", "Tên Sách", "Tên TG", "Giá Bán", "Số Lượng", "Trạng Thái");
         for (Book book : bookList) {
             book.displayData();
         }
